@@ -3,19 +3,12 @@ pipeline{
   stages{
     stage("Build"){
       steps{
-        sh 'echo Build......'
+        sh 'echo Building..'
       }
     }
     stage("Test"){
       steps{
-        sh 'echo Testing.....'
-      }
-    }
-    stage("Sonar Analysis"){
-      steps{
-        def scannerHome = tool 'SonarScanner';
-        withSonarQubeEnv() {
-          sh "${scannerHome}/bin/sonar-scanner"
+        sh 'echo Testing...'
       }
     }
   }
